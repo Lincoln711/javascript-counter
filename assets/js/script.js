@@ -1,62 +1,45 @@
 function createCounterApp() {
-
+    
     const app = document.getElementById("counter-app")
-    const counterDisplay = document.createElement("div")
-    counterDisplay.id = "counter"
-    counterDisplay.textContent = 0
 
-    // Increment Button
-    const incrementButton = document.createElement("button")
-    incrementButton.textContent = "Increase"
-    incrementButton.classList.add("incrementbutton")
-
-    // Decrement Button
-    const decrementButton = document.createElement("button")
-    decrementButton.textContent = "Decrease"
-    decrementButton.classList.add("decrementbutton")
-
-    // Reset Button
-    const resetButton = document.createElement("button")
-    resetButton.textContent = "Reset"
-    resetButton.classList.add("resetbutton")
-
-    // Counter and Buttons to the DOM
-    app.appendChild(counterDisplay)
-    app.appendChild(decrementButton)
-    app.appendChild(resetButton)
-    app.appendChild(incrementButton)
-
-    // Counter Variable
+    // Counter variable
     let counterValue = 0
 
-    // Update Counter
+    // Function to create a button element
+    function createButton(text, className, onClickHandler) {
+        const button = document.createElement("button")
+        button.textContent = text
+        button.classList.add(className)
+        button.addEventListener("click", onClickHandler)
+        return button
+    }
+
+    // Function to update the counter
     function updateCounter() {
         counterDisplay.textContent = counterValue
-
         if (counterValue < 0) {
             counterDisplay.style.color = "#8C001A"
         } else if (counterValue > 0) {
             counterDisplay.style.color = "#347235"
-        }
-        else {
+        } else {
             counterDisplay.style.color = "black"
         }
     }
 
-    // Increment Event
-    incrementButton.addEventListener("click", function () {
+    // Function to increment
+    function increment() {
         counterValue++
         updateCounter()
-    })
+    }
 
-    // Decrement Event
-    decrementButton.addEventListener("click", function () {
+    // Function to decrement
+    function decrement() {
         counterValue--
         updateCounter()
-    })
-    
-    // Reset Event
-    resetButton.addEventListener("click", function () {
+    }
+
+    // Function to reset
+    function reset() {
         let decrementInterval = setInterval(function () {
             if (counterValue > 0) {
                 counterValue--
@@ -67,8 +50,23 @@ function createCounterApp() {
             } else {
                 clearInterval(decrementInterval)
             }
-        }, 50) 
-    })
+        }, 50)
+    }
+
+    // Create the app elements
+    const counterDisplay = document.createElement("div")
+    counterDisplay.id = "counter"
+    counterDisplay.textContent = counterValue
+    
+    const incrementButton = createButton("Increase", "incrementbutton", increment)
+    const decrementButton = createButton("Decrease", "decrementbutton", decrement)
+    const resetButton = createButton("Reset", "resetbutton", reset)
+
+    // Elements to the DOM
+    app.appendChild(counterDisplay)
+    app.appendChild(decrementButton)
+    app.appendChild(resetButton)
+    app.appendChild(incrementButton)
 }
 
-window.onload = createCounterApp 
+window.onload = createCounterApp
