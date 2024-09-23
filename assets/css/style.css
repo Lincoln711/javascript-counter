@@ -8,6 +8,19 @@ body {
     background-color: rgb(102, 175, 235);
 }
 
+header {
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+    font-size: 30px;
+}
+
 #counter-app {
     text-align: center;
 }
@@ -43,10 +56,36 @@ button {
     animation: vibrate 0.1s linear infinite; 
 }
 
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+p {
+    margin: 0;
+}
+
 @keyframes vibrate {
     0% { transform: translateX(0); }
-    25% { transform: translateX(-1px); }
-    50% { transform: translateX(1px); }
-    75% { transform: translateX(-1px); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
     100% { transform: translateX(0); }
+}
+
+@media (max-width: 600px) {
+    #counter-app {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 100%; 
+        margin: 10px 0;
+    }
 }

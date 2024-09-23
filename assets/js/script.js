@@ -54,7 +54,7 @@ function createCounterApp() {
         counterValue--
         updateCounter()
     })
-
+    
     // Reset Event
     resetButton.addEventListener("click", function () {
         let decrementInterval = setInterval(function () {
@@ -71,4 +71,4 @@ function createCounterApp() {
     })
 }
 
-window.onload = createCounterApp
+window.onload = createCounterApp 
