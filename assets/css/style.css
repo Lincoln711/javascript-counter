@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(102, 175, 235);
+}
+
+#counter-app {
+    text-align: center;
+}
+
+#counter {
+    font-size: 120px;
+    margin: 20px;
+}
+
+button {
+    font-size: 25px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.decrementbutton:hover {
+    transition: background-color 0.5s ease;
+    background-color: #8C001A; 
+    color: white;
+}
+
+.incrementbutton:hover {
+    transition: background-color 0.5s ease;
+    background-color: #347235;
+    color: white;
+}
+
+.resetbutton:hover {
+    transition: background-color 0.5s ease;
+    background-color: black;
+    color: white;
+    animation: vibrate 0.1s linear infinite; 
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-1px); }
+    50% { transform: translateX(1px); }
+    75% { transform: translateX(-1px); }
+    100% { transform: translateX(0); }
+}
