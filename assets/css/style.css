@@ -37,20 +37,21 @@ button {
     cursor: pointer;
 }
 
-.decrementbutton:hover {
+button:hover {
     transition: background-color 0.5s ease;
+}
+
+.decrementbutton:hover {
     background-color: #8C001A; 
     color: white;
 }
 
 .incrementbutton:hover {
-    transition: background-color 0.5s ease;
     background-color: #347235;
     color: white;
 }
 
 .resetbutton:hover {
-    transition: background-color 0.5s ease;
     background-color: black;
     color: white;
     animation: vibrate 0.1s linear infinite; 
