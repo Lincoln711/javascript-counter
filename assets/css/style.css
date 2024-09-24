@@ -39,21 +39,19 @@ button {
 
 button:hover {
     transition: background-color 0.5s ease;
+    color: white;
 }
 
 .decrementbutton:hover {
     background-color: #8C001A; 
-    color: white;
 }
 
 .incrementbutton:hover {
     background-color: #347235;
-    color: white;
 }
 
 .resetbutton:hover {
     background-color: black;
-    color: white;
     animation: vibrate 0.1s linear infinite; 
 }
 
